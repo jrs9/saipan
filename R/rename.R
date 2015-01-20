@@ -1,0 +1,31 @@
+library(dplyr)
+r_df <- data.frame(r_df)
+r_df<- tbl_df(r_df)
+r_df <- rename(r_df, January.1998 = industry_return_1, Feb.1998 = industry_return_2, March.1998 = industry_return_3, April.1998 = industry_return_4, May.1998 = industry_return_5, June.1998 = industry_return_6, July.1998 = industry_return_7, August.1998 = industry_return_8, September.1998 = industry_return_9, October.1998 = industry_return_10, November.1998 = industry_return_11, December.1998 = industry_return_12)
+r_df <- rename(r_df, January.1999 = industry_return_1.1, Feb.1999 = industry_return_2.1, March.1999 = industry_return_3.1, April.1999 = industry_return_4.1, May.1999 = industry_return_5.1, June.1999 = industry_return_6.1, July.1999 = industry_return_7.1, August.1999 = industry_return_8.1, September.1999 = industry_return_9.1, October.1999 = industry_return_10.1, November.1999 = industry_return_11.1, December.1999 = industry_return_12.1)
+r_df <- rename(r_df, January.2000 = industry_return_1.2, Feb.2000 = industry_return_2.2, March.2000 = industry_return_3.2, April.2000 = industry_return_4.2, May.2000 = industry_return_5.2, June.2000 = industry_return_6.2, July.2000 = industry_return_7.2, August.2000 = industry_return_8.2, September.2000 = industry_return_9.2, October.2000 = industry_return_10.2, November.2000 = industry_return_11.2, December.2000 = industry_return_12.2)
+r_df <- rename(r_df, January.2001 = industry_return_1.3, Feb.2001 = industry_return_2.3, March.2001 = industry_return_3.3, April.2001 = industry_return_4.3, May.2001 = industry_return_5.3, June.2001 = industry_return_6.3, July.2001 = industry_return_7.3, August.2001 = industry_return_8.3, September.2001 = industry_return_9.3, October.2001 = industry_return_10.3, November.2001 = industry_return_11.3, December.2001 = industry_return_12.3)
+r_df <- rename(r_df, January.2002 = industry_return_1.4, Feb.2002 = industry_return_2.4, March.2002 = industry_return_3.4, April.2002 = industry_return_4.4, May.2002 = industry_return_5.4, June.2002 = industry_return_6.4, July.2002 = industry_return_7.4, August.2002 = industry_return_8.4, September.2002 = industry_return_9.4, October.2002 = industry_return_10.4, November.2002 = industry_return_11.4, December.2002 = industry_return_12.4)
+r_df <- rename(r_df, January.2003 = industry_return_1.5, Feb.2003 = industry_return_2.5, March.2003 = industry_return_3.5, April.2003 = industry_return_4.5, May.2003 = industry_return_5.5, June.2003 = industry_return_6.5, July.2003 = industry_return_7.5, August.2003 = industry_return_8.5, September.2003 = industry_return_9.5, October.2003 = industry_return_10.5, November.2003 = industry_return_11.5, December.2003 = industry_return_12.5)
+r_df <- rename(r_df, January.2004 = industry_return_1.6, Feb.2004 = industry_return_2.6, March.2004 = industry_return_3.6, April.2004 = industry_return_4.6, May.2004 = industry_return_5.6, June.2004 = industry_return_6.6, July.2004 = industry_return_7.6, August.2004 = industry_return_8.6, September.2004 = industry_return_9.6, October.2004 = industry_return_10.6, November.2004 = industry_return_11.6, December.2004 = industry_return_12.6)
+r_df <- rename(r_df, January.2005 = industry_return_1.7, Feb.2005 = industry_return_2.7, March.2005 = industry_return_3.7, April.2005 = industry_return_4.7, May.2005 = industry_return_5.7, June.2005 = industry_return_6.7, July.2005 = industry_return_7.7, August.2005 = industry_return_8.7, September.2005 = industry_return_9.7, October.2005 = industry_return_10.7, November.2005 = industry_return_11.7, December.2005 = industry_return_12.7)
+r_df <- rename(r_df, January.2006 = industry_return_1.8, Feb.2006 = industry_return_2.8, March.2006 = industry_return_3.8, April.2006 = industry_return_4.8, May.2006 = industry_return_5.8, June.2006 = industry_return_6.8, July.2006 = industry_return_7.8, August.2006 = industry_return_8.8, September.2006 = industry_return_9.8, October.2006 = industry_return_10.8, November.2006 = industry_return_11.8, December.2006 = industry_return_12.8)
+r_df <- rename(r_df, January.2007 = industry_return_1.9, Feb.2007 = industry_return_2.9, March.2007 = industry_return_3.9, April.2007 = industry_return_4.9, May.2007 = industry_return_5.9, June.2007 = industry_return_6.9, July.2007 = industry_return_7.9, August.2007 = industry_return_8.9, September.2007 = industry_return_9.9, October.2007 = industry_return_10.9, November.2007 = industry_return_11.9, December.2007 = industry_return_12.9)
+
+
+
+ggplot(aes(v.date, price)) + geom_point()
+
+arrange(ca10, desc(January.1998)) -> ca11
+ca12 <- ca11[1:7,]
+as.numeric(levels(ca12$Feb.1998)[ca12$Feb.1998]) -> ca15
+mean(ca15, na.rm = TRUE)
+ca13 <- ca11[63:69,]
+as.numeric(levels(ca13$Feb.1998)[ca13$Feb.1998]) -> ca14
+mean(ca14, na.rm = TRUE)
+
+
+class(ca10)
+testca <- ca10
+as.character(testca$January.1998)
+testca <- slice(testca, 1:10)
