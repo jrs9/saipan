@@ -1,4 +1,4 @@
-library(dplyr)
+rename_industry <- function(){
 r_df <- data.frame(r_df)
 r_df<- tbl_df(r_df)
 r_df <- rename(r_df, January.1998 = industry_return_1, Feb.1998 = industry_return_2, March.1998 = industry_return_3, April.1998 = industry_return_4, May.1998 = industry_return_5, June.1998 = industry_return_6, July.1998 = industry_return_7, August.1998 = industry_return_8, September.1998 = industry_return_9, October.1998 = industry_return_10, November.1998 = industry_return_11, December.1998 = industry_return_12)
@@ -11,21 +11,5 @@ r_df <- rename(r_df, January.2004 = industry_return_1.6, Feb.2004 = industry_ret
 r_df <- rename(r_df, January.2005 = industry_return_1.7, Feb.2005 = industry_return_2.7, March.2005 = industry_return_3.7, April.2005 = industry_return_4.7, May.2005 = industry_return_5.7, June.2005 = industry_return_6.7, July.2005 = industry_return_7.7, August.2005 = industry_return_8.7, September.2005 = industry_return_9.7, October.2005 = industry_return_10.7, November.2005 = industry_return_11.7, December.2005 = industry_return_12.7)
 r_df <- rename(r_df, January.2006 = industry_return_1.8, Feb.2006 = industry_return_2.8, March.2006 = industry_return_3.8, April.2006 = industry_return_4.8, May.2006 = industry_return_5.8, June.2006 = industry_return_6.8, July.2006 = industry_return_7.8, August.2006 = industry_return_8.8, September.2006 = industry_return_9.8, October.2006 = industry_return_10.8, November.2006 = industry_return_11.8, December.2006 = industry_return_12.8)
 r_df <- rename(r_df, January.2007 = industry_return_1.9, Feb.2007 = industry_return_2.9, March.2007 = industry_return_3.9, April.2007 = industry_return_4.9, May.2007 = industry_return_5.9, June.2007 = industry_return_6.9, July.2007 = industry_return_7.9, August.2007 = industry_return_8.9, September.2007 = industry_return_9.9, October.2007 = industry_return_10.9, November.2007 = industry_return_11.9, December.2007 = industry_return_12.9)
+}
 
-
-
-ggplot(aes(v.date, price)) + geom_point()
-
-arrange(ca10, desc(January.1998)) -> ca11
-ca12 <- ca11[1:7,]
-as.numeric(levels(ca12$Feb.1998)[ca12$Feb.1998]) -> ca15
-mean(ca15, na.rm = TRUE)
-ca13 <- ca11[63:69,]
-as.numeric(levels(ca13$Feb.1998)[ca13$Feb.1998]) -> ca14
-mean(ca14, na.rm = TRUE)
-
-
-class(ca10)
-testca <- ca10
-as.character(testca$January.1998)
-testca <- slice(testca, 1:10)

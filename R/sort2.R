@@ -1,3 +1,4 @@
+sort_ind_1_1 <- function(){
 colnames(r_df) -> c_n
 top_means <- vector()
 bot_means <- vector()
@@ -5,8 +6,16 @@ bot_means <- vector()
 for(i in 2:120) {
 call <- substitute(arrange(r_df, desc(temp)), list(temp = as.name(c_n[i])))
 df_arranged <- eval(call)
+
+call <- substitute(sum(is.na(df_arranged$temp)), list(temp = as.name(c_n[i])))
+numberofna <- eval(call)
+#sum(is.na(df_arranged$January.1998)) -> numberofna
+numberofna <- as.numeric(numberofna)
+t_frame <- 63 - numberofna
+b_frame <- 69 - numberofna
+
 df_arranged_top <- df_arranged[1:7,]
-df_arranged_bot <- df_arranged[63:69,]
+df_arranged_bot <- df_arranged[t_frame:b_frame,]
 num <- i-1
 
 
@@ -30,5 +39,6 @@ means_df <- data.frame(means_df)
 means_df <- tbl_df(means_df)
 mutate(means_df, difference = (top_means-bot_means)) -> means_df
 
-mean(means_df$difference, na.rm = TRUE)
+return(mean(means_df$difference, na.rm = TRUE))
+}
 
